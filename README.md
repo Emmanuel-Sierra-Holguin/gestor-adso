@@ -1,59 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# nombre y proposito del proyecto
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- Nombre:gestor-adso
+- proposito: preparacion del entorno de desarolo para lavarla y programacion con php.
 
-## About Laravel
+# Herramientas y versiones reales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- php 
+- **v PHP 8.2.12**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- composer
+- **v Composer version 2.10.3 2026-08-27 13:34:23**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- php artisan
+- **v Laravel Framework 12.69.3**
 
-## Learning Laravel
+- git
+- **v git version 2.56.0.windows.2**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- xampp
+- v **v3.3.0**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- VS code
+- v 1.141.0
 
-## Laravel Sponsors
+- mariaDB
+- v **C:\xampp\mysql\bin\mysql.exe  Ver 15.1 Distrib 10.4.32-MariaDB, for Win64 (AMD64), source revision c4143f909528e3fab0677a28631d10389354c491**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Pasos de instalación y configuración de .env, Creación de BD y ejecución de migraciones
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. xampp
+- descargamos xampp desde su sitio oficial y terminamos la instalacion mediante unas opciones que skips rapidamente(si tenemos una version vieja si o si tenemos que desintalar y borrar archivos/carpetas.) luego probamos mySQL y apache
 
-## Contributing
+- ahora mediante el ejecutor, escribimos SystemPropertiesAdvanced y entramos a variables del entorno, luego variables del sistema buscamos Path, presionamos editar, luego nuevo y pegamos dentro C:\xampp\php, lo subimos hasta arriba y aceptamos todo, cerramos xampp y lo volvemos a abrir
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Verificamos si funciono, buscamos el origen y versión. 
 
-## Code of Conduct
+**where.exe php**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**php -v**
 
-## Security Vulnerabilities
+- Ahora verificamos que en php.init.text desde xampp config, verificamos que estén estas extensiones y eliminamos ; que estén en el inicio ya que esto los mantiene desactivados, solo a estas extensiones, verificamos que no esta duplicada.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+extension_dir="C:\xampp\php\ext" extension=openssl 
+extension=pdo_mysql 
+extension=mbstring 
+extension=fileinfo 
+extension=zip
 
-## License
+- Verificamos que habilitaron bien las extensiones.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Verificar archivo php.ini activo**
+**php --ini**
+
+**Listar módulos/extensiones cargados**
+**php -m**
+
+2. Instalamos composer, aceptamos todo sin darle a ninguna casilla.
+
+- Verificamos que tenemos la versión correcta y la instalación tuviera éxito y la ruta de composer.
+
+**composer -V**
+
+**where.exe composer**
+
+3. Instalamos git.
+
+- Verificamos la versión de git.
+
+**git --version**
+
+4. instalamos VS studio
+
+- Verificar versión
+  code --version
+
+- Abrir carpeta actual en VS Code
+  code .
+
+**verificamos que el entorno para laraval este listo**
+
+- php -v
+  composer -V
+  git --version
+  code --version
+  where.exe php
+  where.exe composer
+
+
+6. laraval
+
+- Vamos a la carpeta del usuario actual, descargamos Laravel y creamos la carpeta gestor-adso, verificamos la versión.
+
+- cd %USERPROFILE%\Documents
+  composer create-project laravel/laravel gestor-adso
+  cd gestor-adso
+  php artisan --version
+
+7. php artisan serve
+
+- abrimos el servidor, copiamos la URL en el navegador y dejamos la terminal sin tocar, abrimos otra para ejecutar otros comandos.
+
+8. verificamos que tenemos archivo .env y verificamos que el DB este organizado asi y el puerto es el que tenga xampp.
+
+- DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=gestor_adso
+  DB_USERNAME=root
+  DB_PASSWORD=
+ 
+9. Iniciamos maríaDB y creamos la base de datos de gestor_adso
+
+10. Iniciamos maríaDB y creamos la base de datos de gestor_adso
+  Verificamos que la migración fue correcta y realizamos un barrio de cache para leer los valores actuales de .inv de lavarel.
+
+  php artisan config:clear y php artisan migrate
+
+11. creamos el git local con rama main y preparamos los archivos y hacemos un cierre formal con git commit para cuando conectemos con el repositorio remoto.
+
+12. hacemos el readme.
+
+
+
+
+  
+
