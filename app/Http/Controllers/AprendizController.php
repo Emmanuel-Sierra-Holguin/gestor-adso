@@ -23,15 +23,14 @@ class AprendizController extends Controller
 
  public function store(Request $request)
  {
- // Validación mínima (simulación de guardado)
+ 
  $data = $request->validate([
  'nombre' => ['required','string','max:120'],
  'documento' => ['required','string','max:40','unique:aprendices,documento'],
  'correo' => ['required','email','max:120','unique:aprendices,correo'],
  'ficha_id'=>['nullable','integer'],
  ]);
- // Aquí NO guardamos en BD (lo haremos en Semana 4 con Eloquent).
- // Objetivo Semana 2: comprobar flujo ruta ³ acción ³ vista ³ redirect.
+
  Aprendiz::create($data);
 
 return redirect()->route('aprendices.index')->with('ok','aprendiz creado');
